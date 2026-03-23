@@ -4,10 +4,11 @@ Package.Export("NanosWorldVehicles", NanosWorldVehicles)
 
 ---@class Offrrad : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): Offroad
-NanosWorldVehicles.Offroad = VehicleWheeled.Inherit("Offroad")
-NanosWorldVehicles.Offroad.name = "Offroad"
-NanosWorldVehicles.Offroad.image = "assets://nanos-world/Thumbnails/SK_Offroad.jpg"
-NanosWorldVehicles.Offroad.category = "wheeled"
+NanosWorldVehicles.Offroad = VehicleWheeled.Inherit("Offroad", {
+	name = "Offroad",
+	image = "assets://nanos-world/Thumbnails/SK_Offroad.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.Offroad:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Offroad", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_15", "nanos-world::A_Vehicle_Horn_Toyota", "nanos-world::A_Vehicle_Skid", "nanos-world::A_Car_Engine_Start", "nanos-world::A_Vehicle_Door", true, "nanos-world::ABP_Offroad")
@@ -49,10 +50,11 @@ end
 
 ---@class CamperVan : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): CamperVan
-NanosWorldVehicles.CamperVan = VehicleWheeled.Inherit("CamperVan")
-NanosWorldVehicles.CamperVan.name = "CamperVan"
-NanosWorldVehicles.CamperVan.image = "assets://nanos-world/Thumbnails/SK_CamperVan.jpg"
-NanosWorldVehicles.CamperVan.category = "wheeled"
+NanosWorldVehicles.CamperVan = VehicleWheeled.Inherit("CamperVan", {
+	name = "CamperVan",
+	image = "assets://nanos-world/Thumbnails/SK_CamperVan.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.CamperVan:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_CamperVan", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
@@ -78,10 +80,11 @@ end
 
 ---@class Van : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): Van
-NanosWorldVehicles.Van = VehicleWheeled.Inherit("Van")
-NanosWorldVehicles.Van.name = "Van"
-NanosWorldVehicles.Van.image = "assets://nanos-world/Thumbnails/SK_Van.jpg"
-NanosWorldVehicles.Van.category = "wheeled"
+NanosWorldVehicles.Van = VehicleWheeled.Inherit("Van", {
+	name = "Van",
+	image = "assets://nanos-world/Thumbnails/SK_Van.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.Van:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Van", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
@@ -105,10 +108,11 @@ end
 
 ---@class Wagon : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): Wagon
-NanosWorldVehicles.Wagon = VehicleWheeled.Inherit("Wagon")
-NanosWorldVehicles.Wagon.name = "Wagon"
-NanosWorldVehicles.Wagon.image = "assets://nanos-world/Thumbnails/SK_Wagon.jpg"
-NanosWorldVehicles.Wagon.category = "wheeled"
+NanosWorldVehicles.Wagon = VehicleWheeled.Inherit("Wagon", {
+	name = "Wagon",
+	image = "assets://nanos-world/Thumbnails/SK_Wagon.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.Wagon:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Wagon", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_14")
@@ -135,10 +139,11 @@ end
 
 ---@class Sedan : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): Sedan
-NanosWorldVehicles.Sedan = VehicleWheeled.Inherit("Sedan")
-NanosWorldVehicles.Sedan.name = "Sedan"
-NanosWorldVehicles.Sedan.image = "assets://nanos-world/Thumbnails/SK_Sedan.jpg"
-NanosWorldVehicles.Sedan.category = "wheeled"
+NanosWorldVehicles.Sedan = VehicleWheeled.Inherit("Sedan", {
+	name = "Sedan",
+	image = "assets://nanos-world/Thumbnails/SK_Sedan.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.Sedan:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Sedan", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_01")
@@ -165,10 +170,11 @@ end
 
 ---@class SUV : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): SUV
-NanosWorldVehicles.SUV = VehicleWheeled.Inherit("SUV")
-NanosWorldVehicles.SUV.name = "SUV"
-NanosWorldVehicles.SUV.image = "assets://nanos-world/Thumbnails/SK_SUV.jpg"
-NanosWorldVehicles.SUV.category = "wheeled"
+NanosWorldVehicles.SUV = VehicleWheeled.Inherit("SUV", {
+	name = "SUV",
+	image = "assets://nanos-world/Thumbnails/SK_SUV.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.SUV:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_SUV", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_14")
@@ -193,10 +199,11 @@ end
 
 ---@class Hatchback : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): Hatchback
-NanosWorldVehicles.Hatchback = VehicleWheeled.Inherit("Hatchback")
-NanosWorldVehicles.Hatchback.name = "Hatchback"
-NanosWorldVehicles.Hatchback.image = "assets://nanos-world/Thumbnails/SK_Hatchback.jpg"
-NanosWorldVehicles.Hatchback.category = "wheeled"
+NanosWorldVehicles.Hatchback = VehicleWheeled.Inherit("Hatchback", {
+	name = "Hatchback",
+	image = "assets://nanos-world/Thumbnails/SK_Hatchback.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.Hatchback:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Hatchback", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_01")
@@ -220,10 +227,11 @@ end
 
 ---@class Pickup : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): Pickup
-NanosWorldVehicles.Pickup = VehicleWheeled.Inherit("Pickup")
-NanosWorldVehicles.Pickup.name = "Pickup"
-NanosWorldVehicles.Pickup.image = "assets://nanos-world/Thumbnails/SK_Pickup.jpg"
-NanosWorldVehicles.Pickup.category = "wheeled"
+NanosWorldVehicles.Pickup = VehicleWheeled.Inherit("Pickup", {
+	name = "Pickup",
+	image = "assets://nanos-world/Thumbnails/SK_Pickup.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.Pickup:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Pickup", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_10")
@@ -252,10 +260,11 @@ end
 
 ---@class SportsCar : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): SportsCar
-NanosWorldVehicles.SportsCar = VehicleWheeled.Inherit("SportsCar")
-NanosWorldVehicles.SportsCar.name = "SportsCar"
-NanosWorldVehicles.SportsCar.image = "assets://nanos-world/Thumbnails/SK_SportsCar.jpg"
-NanosWorldVehicles.SportsCar.category = "wheeled"
+NanosWorldVehicles.SportsCar = VehicleWheeled.Inherit("SportsCar", {
+	name = "SportsCar",
+	image = "assets://nanos-world/Thumbnails/SK_SportsCar.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.SportsCar:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_SportsCar", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_05")
@@ -279,10 +288,11 @@ end
 
 ---@class TruckBox : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): TruckBox
-NanosWorldVehicles.TruckBox = VehicleWheeled.Inherit("TruckBox")
-NanosWorldVehicles.TruckBox.name = "Truck Box"
-NanosWorldVehicles.TruckBox.image = "assets://nanos-world/Thumbnails/SK_Truck_Box.jpg"
-NanosWorldVehicles.TruckBox.category = "wheeled"
+NanosWorldVehicles.TruckBox = VehicleWheeled.Inherit("TruckBox", {
+	name = "Truck Box",
+	image = "assets://nanos-world/Thumbnails/SK_Truck_Box.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.TruckBox:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Truck_Box", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
@@ -306,10 +316,11 @@ end
 
 ---@class TruckChassis : VehicleWheeled
 ---@overload fun(location: Vector, rotation: Rotator): TruckChassis
-NanosWorldVehicles.TruckChassis = VehicleWheeled.Inherit("TruckChassis")
-NanosWorldVehicles.TruckChassis.name = "Truck Chassis"
-NanosWorldVehicles.TruckChassis.image = "assets://nanos-world/Thumbnails/SK_Truck_Chassis.jpg"
-NanosWorldVehicles.TruckChassis.category = "wheeled"
+NanosWorldVehicles.TruckChassis = VehicleWheeled.Inherit("TruckChassis", {
+	name = "Truck Chassis",
+	image = "assets://nanos-world/Thumbnails/SK_Truck_Chassis.jpg",
+	category = "wheeled",
+})
 
 function NanosWorldVehicles.TruckChassis:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Truck_Chassis", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
@@ -333,10 +344,11 @@ end
 
 ---@class Boat : VehicleWater
 ---@overload fun(location: Vector, rotation: Rotator): Boat
-NanosWorldVehicles.Boat = VehicleWater.Inherit("Boat")
-NanosWorldVehicles.Boat.name = "Boat"
-NanosWorldVehicles.Boat.image = "assets://nanos-world/Thumbnails/SK_Motorboat.jpg"
-NanosWorldVehicles.Boat.category = "water"
+NanosWorldVehicles.Boat = VehicleWater.Inherit("Boat", {
+	name = "Boat",
+	image = "assets://nanos-world/Thumbnails/SK_Motorboat.jpg",
+	category = "water",
+})
 
 function NanosWorldVehicles.Boat:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Motorboat")
