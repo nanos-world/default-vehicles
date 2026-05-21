@@ -22,7 +22,7 @@ NanosWorldVehicles.Offroad = VehicleWheeled.Inherit("Offroad", {
 })
 
 function NanosWorldVehicles.Offroad:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Offroad", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_15", "nanos-world::A_Vehicle_Horn_Toyota", "nanos-world::A_Vehicle_Skid", "nanos-world::A_Car_Engine_Start", "nanos-world::A_Vehicle_Door", true, "nanos-world::ABP_Offroad")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Offroad", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_15", "nanos-world::A_Vehicle_Horn_Toyota", "nanos-world::A_Vehicle_Skid", "nanos-world::A_Car_Engine_Start", "nanos-world::A_Vehicle_Door", true, "nanos-world::ABP_Offroad", true)
 
 	self:AddStaticMeshAttached("body", "nanos-world::SM_Offroad_Body")
 	self:AddStaticMeshAttached("wheel_FL", "nanos-world::SM_Offroad_Tire", "VisWheel_FL")
@@ -47,8 +47,6 @@ function NanosWorldVehicles.Offroad:Constructor(location, rotation)
 
 	self:SetDoor(0, Vector(0, -80, 100), Vector(12, -30, 90), Rotator(0, 0,   0), 75, -150)
 	self:SetDoor(1, Vector(0,  80, 100), Vector(40,  32, 90), Rotator(0, 0, -15), 75,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class CamperVan : VehicleWheeled
@@ -60,7 +58,7 @@ NanosWorldVehicles.CamperVan = VehicleWheeled.Inherit("CamperVan", {
 })
 
 function NanosWorldVehicles.CamperVan:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_CamperVan", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_CamperVan", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_08", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(550, 5200)
 	self:SetAerodynamicsSetup(2700, 0.6, 600, 220, 0.3, Vector(10, 0, 39))
@@ -77,8 +75,6 @@ function NanosWorldVehicles.CamperVan:Constructor(location, rotation)
 	self:SetDoor(0, Vector(180, -120, 140), Vector( 155, -58, 150), Rotator(0, 0, 15), 75, -150)
 	self:SetDoor(1, Vector(180,  120, 140), Vector( 160,  55, 145), Rotator(0, 0,  5), 60,  150)
 	self:SetDoor(2, Vector(50,   120, 140), Vector(-125,   0, 140), Rotator(0, 0,  5), 60,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class Van : VehicleWheeled
@@ -90,7 +86,7 @@ NanosWorldVehicles.Van = VehicleWheeled.Inherit("Van", {
 })
 
 function NanosWorldVehicles.Van:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Van", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Van", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_08", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(540, 4400)
 	self:SetAerodynamicsSetup(3200, 0.6, 550, 230, 0.3, Vector(0, 0, 44))
@@ -105,8 +101,6 @@ function NanosWorldVehicles.Van:Constructor(location, rotation)
 	self:SetWheel(3, "Wheel_Rear_Right",  44, 41,  0, Vector(), true,  true, true,  false, false, 3000, 6000, 1200, 1, 4, 20, 20, 250, 50, 2, 10, 0, 0.5, 0.2)
 
 	self:SetDoor(0, Vector(70, -120, 140), Vector( 70, -73, 162), Rotator(0, 0, 15), 75, -150)
-
-	self:RecreatePhysics()
 end
 
 ---@class Wagon : VehicleWheeled
@@ -118,7 +112,7 @@ NanosWorldVehicles.Wagon = VehicleWheeled.Inherit("Wagon", {
 })
 
 function NanosWorldVehicles.Wagon:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Wagon", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_14")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Wagon", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_14", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(650, 4600)
 	self:SetAerodynamicsSetup(1900, 0.3, 505, 190, 0.3, Vector(10, 0, 36))
@@ -136,8 +130,6 @@ function NanosWorldVehicles.Wagon:Constructor(location, rotation)
 	self:SetDoor(1, Vector( 22,  80, 100), Vector(-10,  39, 90), Rotator(0, 0,  0), 60,  150)
 	self:SetDoor(2, Vector(-80, -80, 100), Vector(-95, -40, 97), Rotator(0, 0,  0), 60, -150)
 	self:SetDoor(3, Vector(-80,  80, 100), Vector(-95,  40, 97), Rotator(0, 0,  0), 60,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class Sedan : VehicleWheeled
@@ -149,7 +141,7 @@ NanosWorldVehicles.Sedan = VehicleWheeled.Inherit("Sedan", {
 })
 
 function NanosWorldVehicles.Sedan:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Sedan", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_01")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Sedan", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_01", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(700, 5700, 1200, 0.05, 3, 600)
 	self:SetAerodynamicsSetup(1400, 0.3, 200, 190, 0.4, Vector(10, 0, 30))
@@ -167,8 +159,6 @@ function NanosWorldVehicles.Sedan:Constructor(location, rotation)
 	self:SetDoor(1, Vector(31,  110, 90), Vector(5, 40, 85), Rotator(0, 0, 0), 60,  150)
 	self:SetDoor(2, Vector(-80, -110, 90), Vector(-105, -40, 95), Rotator(0, 0, 0), 60, -150)
 	self:SetDoor(3, Vector(-80,  110, 90), Vector(-105,  40, 95), Rotator(0, 0, 0), 60,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class SUV : VehicleWheeled
@@ -180,7 +170,7 @@ NanosWorldVehicles.SUV = VehicleWheeled.Inherit("SUV", {
 })
 
 function NanosWorldVehicles.SUV:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_SUV", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_14")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_SUV", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_14", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(400, 5000, 1200, 0.1, 6, 800)
 	self:SetTransmissionSetup(2.5, 4000)
@@ -197,8 +187,6 @@ function NanosWorldVehicles.SUV:Constructor(location, rotation)
 	self:SetDoor(1, Vector( 22,  80, 120), Vector( 5,   47, 105), Rotator(0, 0,  0), 60,  150)
 	self:SetDoor(2, Vector(-80, -80, 120), Vector(-60, -39,  90), Rotator(0, 0,  0), 60, -150)
 	self:SetDoor(3, Vector(-80,  80, 120), Vector(-60,  39,  90), Rotator(0, 0,  0), 60,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class Hatchback : VehicleWheeled
@@ -210,7 +198,7 @@ NanosWorldVehicles.Hatchback = VehicleWheeled.Inherit("Hatchback", {
 })
 
 function NanosWorldVehicles.Hatchback:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Hatchback", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_01")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Hatchback", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_01", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(300, 4500, 1200, 0.03, 3, 600)
 	self:SetAerodynamicsSetup(1000, 0.3, 500, 200, 0.3, Vector(10, 0, 26))
@@ -226,8 +214,6 @@ function NanosWorldVehicles.Hatchback:Constructor(location, rotation)
 
 	self:SetDoor(0, Vector(25, -80, 100), Vector( 0, -47, 80), Rotator(0, 0, 10), 60, -150)
 	self:SetDoor(1, Vector(25,  80, 100), Vector(12,  47, 80), Rotator(0, 0,  0), 60,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class Pickup : VehicleWheeled
@@ -239,7 +225,7 @@ NanosWorldVehicles.Pickup = VehicleWheeled.Inherit("Pickup", {
 })
 
 function NanosWorldVehicles.Pickup:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Pickup", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_10")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Pickup", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_10", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(550, 5000)
 	self:SetAerodynamicsSetup(2000, 0.4, 500, 200, 0.4, Vector(10, 0, 30))
@@ -259,8 +245,6 @@ function NanosWorldVehicles.Pickup:Constructor(location, rotation)
 	self:SetDoor(3, Vector( -90,  75, 130), Vector( -90,   115, 155), Rotator(0, -90, 20), 60,  150)
 	self:SetDoor(4, Vector(-195, -75, 130), Vector(-195,  -115, 155), Rotator(0,  90, 20), 60, -150)
 	self:SetDoor(5, Vector(-195,  75, 130), Vector(-195,   115, 155), Rotator(0, -90, 20), 60,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class SportsCar : VehicleWheeled
@@ -272,7 +256,7 @@ NanosWorldVehicles.SportsCar = VehicleWheeled.Inherit("SportsCar", {
 })
 
 function NanosWorldVehicles.SportsCar:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_SportsCar", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_05")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_SportsCar", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_05", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(1000, 8000, 1000, 0.1, 5, 800)
 	self:SetAerodynamicsSetup(1600, 0.3, 190, 130, 6, Vector(10, 0, 31))
@@ -287,8 +271,6 @@ function NanosWorldVehicles.SportsCar:Constructor(location, rotation)
 
 	self:SetDoor(0, Vector(25, -95, 100), Vector(40, -42, 55), Rotator(0, 0, -10), 75, -150)
 	self:SetDoor(1, Vector(25,  95, 100), Vector(35,  42, 60), Rotator(0, 0, -15), 75,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class TruckBox : VehicleWheeled
@@ -300,7 +282,7 @@ NanosWorldVehicles.TruckBox = VehicleWheeled.Inherit("TruckBox", {
 })
 
 function NanosWorldVehicles.TruckBox:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Truck_Box", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Truck_Box", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_08", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(1000, 4800, 1000, 0.12, 10, 650)
 	self:SetAerodynamicsSetup(5000, 0.6, 250, 350, 4.0, Vector(0, 0, 43))
@@ -315,8 +297,6 @@ function NanosWorldVehicles.TruckBox:Constructor(location, rotation)
 
 	self:SetDoor(0, Vector(235, -100, 132), Vector(225, -56, 145), Rotator(0, 0, 20), 100, -150)
 	self:SetDoor(1, Vector(235,  100, 132), Vector(225,  60, 147), Rotator(0, 0, 10), 100,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class TruckChassis : VehicleWheeled
@@ -328,7 +308,7 @@ NanosWorldVehicles.TruckChassis = VehicleWheeled.Inherit("TruckChassis", {
 })
 
 function NanosWorldVehicles.TruckChassis:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Truck_Chassis", CollisionType.Normal, true, false, true, "nanos-world::A_Vehicle_Engine_08")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Truck_Chassis", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_08", nil, nil, nil, nil, true, nil, true)
 
 	self:SetEngineSetup(1000, 4800, 1000, 0.12, 10, 650)
 	self:SetAerodynamicsSetup(3000, 0.6, 250, 350, 4.0, Vector(100, 0, 43))
@@ -343,8 +323,6 @@ function NanosWorldVehicles.TruckChassis:Constructor(location, rotation)
 
 	self:SetDoor(0, Vector(235, -100, 132), Vector(225, -56, 145), Rotator(0, 0, 20), 100, -150)
 	self:SetDoor(1, Vector(235,  100, 132), Vector(225,  60, 147), Rotator(0, 0, 10), 100,  150)
-
-	self:RecreatePhysics()
 end
 
 ---@class Boat : VehicleWater
@@ -356,7 +334,7 @@ NanosWorldVehicles.Boat = VehicleWater.Inherit("Boat", {
 })
 
 function NanosWorldVehicles.Boat:Constructor(location, rotation)
-	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Motorboat")
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Motorboat", CollisionType.Auto, true, true)
 
 	self:SetDoor(0, Vector(0, 0, 0), Vector(-120, 0, 55), Rotator(-10, 0, 0), 200, -100)
 end
