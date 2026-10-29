@@ -342,3 +342,22 @@ function NanosWorldVehicles.Boat:Constructor(location, rotation)
 	self:SetDoor(2, Vector( 25, 95, 70), Vector( 25, 95, 73), Rotator(0, -90, 10), 75, -60)
 	self:SetDoor(3, Vector( 25, -95, 70), Vector( 25, -95, 73), Rotator(0, 90, 10), 75, 60)
 end
+
+---@class FishingBoat : VehicleWater
+---@overload fun(location: Vector, rotation: Rotator): FishingBoat
+NanosWorldVehicles.FishingBoat = VehicleWater.Inherit("FishingBoat", {
+	name = "Fishing Boat",
+	image = "assets://nanos-world/Thumbnails/SK_FishingBoat.jpg",
+	category = "water",
+})
+
+function NanosWorldVehicles.FishingBoat:Constructor(location, rotation)
+	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_FishingBoat", CollisionType.Auto, true, SpawnMode.AfterConstructor)
+
+	self:SetCameraOffset(Vector(0, 0, -900))
+	self:SetCameraArmLength(500)
+	self:SetEngineOffset(Vector(-465, 0, -90))
+	self:SetThrustStrength(36000)
+
+	self:SetDoor(0, Vector(-290, 0, 180), Vector( -110, 35, 310), Rotator(0, 0, 0), 120, 150)
+end
