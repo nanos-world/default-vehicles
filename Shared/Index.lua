@@ -19,16 +19,25 @@ NanosWorldVehicles.Offroad = VehicleWheeled.Inherit("Offroad", {
 	},
 	forward_gears = { 4.25, 2.52, 1.66, 1.22, 1 },
 	reverse_gears = { 4.04 },
+
+	-- Tire mesh of each wheel (by wheel index), taken off when the tire goes flat
+	tires = {
+		[0] = { id = "wheel_FL", socket = "VisWheel_FL", rotation = Rotator() },
+		[1] = { id = "wheel_FR", socket = "VisWheel_FR", rotation = Rotator(0, 180, 0) },
+		[2] = { id = "wheel_BL", socket = "VisWheel_BL", rotation = Rotator() },
+		[3] = { id = "wheel_BR", socket = "VisWheel_BR", rotation = Rotator(0, 180, 0) },
+	},
 })
 
 function NanosWorldVehicles.Offroad:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Offroad", CollisionType.Normal, true, true, "nanos-world::A_Vehicle_Engine_15", "nanos-world::A_Vehicle_Horn_Toyota", "nanos-world::A_Vehicle_Skid", "nanos-world::A_Car_Engine_Start", "nanos-world::A_Vehicle_Door", true, "nanos-world::ABP_Offroad", SpawnMode.AfterConstructor)
 
 	self:AddStaticMeshAttached("body", "nanos-world::SM_Offroad_Body")
-	self:AddStaticMeshAttached("wheel_FL", "nanos-world::SM_Offroad_Tire", "VisWheel_FL")
-	self:AddStaticMeshAttached("wheel_FR", "nanos-world::SM_Offroad_Tire", "VisWheel_FR", Vector(), Rotator(0, 180, 0))
-	self:AddStaticMeshAttached("wheel_BL", "nanos-world::SM_Offroad_Tire", "VisWheel_BL")
-	self:AddStaticMeshAttached("wheel_BR", "nanos-world::SM_Offroad_Tire", "VisWheel_BR", Vector(), Rotator(0, 180, 0))
+
+	for wheel_index in pairs(self.tires) do
+		self:AttachTire(wheel_index)
+	end
+
 	self:AddStaticMeshAttached("steering_wheel", "nanos-world::SM_Steering_Wheel_01", "", Vector(50, -30, 115), Rotator(0, 90, 0))
 
 	self:SetCameraOffset(Vector(0, 0, 100))
@@ -47,6 +56,31 @@ function NanosWorldVehicles.Offroad:Constructor(location, rotation)
 
 	self:SetDoor(0, Vector(0, -80, 100), Vector(12, -30, 90), Rotator(0, 0,   0), 75, -150)
 	self:SetDoor(1, Vector(0,  80, 100), Vector(40,  32, 90), Rotator(0, 0, -15), 75,  150)
+end
+
+function NanosWorldVehicles.Offroad:AttachTire(wheel_index)
+	local tire = self.tires[wheel_index]
+	self:AddStaticMeshAttached(tire.id, "nanos-world::SM_Offroad_Tire", tire.socket, Vector(), tire.rotation)
+end
+
+-- A flat tire comes off its wheel, and goes back on when the tire is restored or the vehicle respawns
+if Server then
+	NanosWorldVehicles.Offroad.Subscribe("TireFlat", function(self, wheel_index, is_flat)
+		local tire = self.tires[wheel_index]
+		if not tire then return end
+
+		if is_flat then
+			self:RemoveStaticMeshAttached(tire.id)
+		else
+			self:AttachTire(wheel_index)
+		end
+	end)
+
+	NanosWorldVehicles.Offroad.Subscribe("Respawn", function(self)
+		for wheel_index in pairs(self.tires) do
+			self:AttachTire(wheel_index)
+		end
+	end)
 end
 
 ---@class CamperVan : VehicleWheeled
