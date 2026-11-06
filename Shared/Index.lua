@@ -6,7 +6,7 @@ Package.Export("NanosWorldVehicles", NanosWorldVehicles)
 ---@overload fun(location: Vector, rotation: Rotator): Offroad
 NanosWorldVehicles.Offroad = VehicleWheeled.Inherit("Offroad", {
 	name = "Offroad",
-	image = "assets://nanos-world/Thumbnails/Offroad.png",
+	image = "assets://nanos-world/Thumbnails/Offroad.webp",
 	category = "wheeled",
 
 	-- Cached tables
@@ -87,7 +87,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): CamperVan
 NanosWorldVehicles.CamperVan = VehicleWheeled.Inherit("CamperVan", {
 	name = "CamperVan",
-	image = "assets://nanos-world/Thumbnails/CamperVan.png",
+	image = "assets://nanos-world/Thumbnails/CamperVan.webp",
 	category = "wheeled",
 })
 
@@ -115,7 +115,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): Van
 NanosWorldVehicles.Van = VehicleWheeled.Inherit("Van", {
 	name = "Van",
-	image = "assets://nanos-world/Thumbnails/Van.png",
+	image = "assets://nanos-world/Thumbnails/Van.webp",
 	category = "wheeled",
 })
 
@@ -141,7 +141,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): Wagon
 NanosWorldVehicles.Wagon = VehicleWheeled.Inherit("Wagon", {
 	name = "Wagon",
-	image = "assets://nanos-world/Thumbnails/Wagon.png",
+	image = "assets://nanos-world/Thumbnails/Wagon.webp",
 	category = "wheeled",
 })
 
@@ -170,7 +170,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): Sedan
 NanosWorldVehicles.Sedan = VehicleWheeled.Inherit("Sedan", {
 	name = "Sedan",
-	image = "assets://nanos-world/Thumbnails/Sedan.png",
+	image = "assets://nanos-world/Thumbnails/Sedan.webp",
 	category = "wheeled",
 })
 
@@ -199,7 +199,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): SUV
 NanosWorldVehicles.SUV = VehicleWheeled.Inherit("SUV", {
 	name = "SUV",
-	image = "assets://nanos-world/Thumbnails/SUV.png",
+	image = "assets://nanos-world/Thumbnails/SUV.webp",
 	category = "wheeled",
 })
 
@@ -228,7 +228,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): Hatchback
 NanosWorldVehicles.Hatchback = VehicleWheeled.Inherit("Hatchback", {
 	name = "Hatchback",
-	image = "assets://nanos-world/Thumbnails/Hatchback.png",
+	image = "assets://nanos-world/Thumbnails/Hatchback.webp",
 	category = "wheeled",
 })
 
@@ -255,7 +255,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): Pickup
 NanosWorldVehicles.Pickup = VehicleWheeled.Inherit("Pickup", {
 	name = "Pickup",
-	image = "assets://nanos-world/Thumbnails/Pickup.png",
+	image = "assets://nanos-world/Thumbnails/Pickup.webp",
 	category = "wheeled",
 })
 
@@ -286,7 +286,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): SportsCar
 NanosWorldVehicles.SportsCar = VehicleWheeled.Inherit("SportsCar", {
 	name = "SportsCar",
-	image = "assets://nanos-world/Thumbnails/SportsCar.png",
+	image = "assets://nanos-world/Thumbnails/SportsCar.webp",
 	category = "wheeled",
 })
 
@@ -312,7 +312,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): TruckBox
 NanosWorldVehicles.TruckBox = VehicleWheeled.Inherit("TruckBox", {
 	name = "Truck Box",
-	image = "assets://nanos-world/Thumbnails/TruckBox.png",
+	image = "assets://nanos-world/Thumbnails/TruckBox.webp",
 	category = "wheeled",
 })
 
@@ -338,7 +338,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): TruckChassis
 NanosWorldVehicles.TruckChassis = VehicleWheeled.Inherit("TruckChassis", {
 	name = "Truck Chassis",
-	image = "assets://nanos-world/Thumbnails/TruckChassis.png",
+	image = "assets://nanos-world/Thumbnails/TruckChassis.webp",
 	category = "wheeled",
 })
 
@@ -364,7 +364,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): Boat
 NanosWorldVehicles.Boat = VehicleWater.Inherit("Boat", {
 	name = "Boat",
-	image = "assets://nanos-world/Thumbnails/Boat.png",
+	image = "assets://nanos-world/Thumbnails/Boat.webp",
 	category = "water",
 })
 
@@ -381,7 +381,7 @@ end
 ---@overload fun(location: Vector, rotation: Rotator): FishingBoat
 NanosWorldVehicles.FishingBoat = VehicleWater.Inherit("FishingBoat", {
 	name = "Fishing Boat",
-	image = "assets://nanos-world/Thumbnails/FishingBoat.png",
+	image = "assets://nanos-world/Thumbnails/FishingBoat.webp",
 	category = "water",
 })
 
