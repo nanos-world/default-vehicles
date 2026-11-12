@@ -63,7 +63,7 @@ function NanosWorldVehicles.Offroad:AttachTire(wheel_index)
 	self:AddStaticMeshAttached(tire.id, "nanos-world::SM_Offroad_Tire", tire.socket, Vector(), tire.rotation)
 end
 
--- A flat tire comes off its wheel, and goes back on when the tire is restored or the vehicle respawns
+-- A flat tire comes off its wheel, and goes back on when the tire is restored or the vehicle respawns, all tires come off when it explodes
 if Server then
 	NanosWorldVehicles.Offroad.Subscribe("TireFlat", function(self, wheel_index, is_flat)
 		local tire = self.tires[wheel_index]
@@ -73,6 +73,12 @@ if Server then
 			self:RemoveStaticMeshAttached(tire.id)
 		else
 			self:AttachTire(wheel_index)
+		end
+	end)
+
+	NanosWorldVehicles.Offroad.Subscribe("Death", function(self)
+		for _, tire in pairs(self.tires) do
+			self:RemoveStaticMeshAttached(tire.id)
 		end
 	end)
 
