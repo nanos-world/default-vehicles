@@ -391,7 +391,7 @@ function NanosWorldVehicles.FishingBoat:Constructor(location, rotation)
 	self:SetCameraOffset(Vector(0, 0, -900))
 	self:SetCameraArmLength(500)
 	self:SetEngineOffset(Vector(-465, 0, -90))
-	self:SetThrustStrength(36000)
+	self:SetThrustStrength(10000)
 
 	self:SetDoor(0, Vector(-290, 0, 180), Vector( -110, 35, 310), Rotator(0, 0, 0), 120, 150)
 end
