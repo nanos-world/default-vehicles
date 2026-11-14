@@ -377,6 +377,8 @@ NanosWorldVehicles.Boat = VehicleWater.Inherit("Boat", {
 function NanosWorldVehicles.Boat:Constructor(location, rotation)
 	self.Super:Constructor(location or Vector(), rotation or Rotator(), "nanos-world::SK_Motorboat", CollisionType.Auto, true, SpawnMode.AfterConstructor)
 
+	self:SetThrustStrength(2000)
+
 	self:SetDoor(0, Vector(-120, 0, 50), Vector(-120, 0, 55), Rotator(-10, 0, 0), 100, 0)
 	self:SetDoor(1, Vector( 180, 0, 50), Vector( 190, 0, 55), Rotator(-10, -180, 0), 75, 0)
 	self:SetDoor(2, Vector( 25, 95, 70), Vector( 25, 95, 73), Rotator(0, -90, 10), 75, -60)
